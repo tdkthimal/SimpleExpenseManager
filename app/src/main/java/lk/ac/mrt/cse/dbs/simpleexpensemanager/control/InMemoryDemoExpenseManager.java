@@ -16,21 +16,30 @@
 
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.control;
 
+import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.AccountDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.TransactionDAO;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.DBAccountDAO;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.DBTransactionDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.InMemoryAccountDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.impl.InMemoryTransactionDAO;
 import lk.ac.mrt.cse.dbs.simpleexpensemanager.data.model.Account;
+import lk.ac.mrt.cse.dbs.simpleexpensemanager.db.DBHandler;
 
 /**
  *
  */
 public class InMemoryDemoExpenseManager extends ExpenseManager {
 
-    public InMemoryDemoExpenseManager() {
-        setup();
-    }
 
+/*
+    public InMemoryDemoExpenseManager() {
+
+    }
+*/
     @Override
     public void setup() {
         /*** Begin generating dummy data for In-Memory implementation ***/

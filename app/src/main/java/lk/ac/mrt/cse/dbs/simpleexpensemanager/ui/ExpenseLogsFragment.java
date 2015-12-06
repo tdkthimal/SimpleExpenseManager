@@ -73,7 +73,7 @@ public class ExpenseLogsFragment extends Fragment {
             TextView lDateVal = new TextView(rootView.getContext());
 
             SimpleDateFormat sdf = new SimpleDateFormat(getActivity().getString(R.string.config_date_log_pattern));
-            String formattedDate = sdf.format(transaction.getDate());
+            String formattedDate = transaction.getDate();
             lDateVal.setText(formattedDate);
             tr.addView(lDateVal);
 

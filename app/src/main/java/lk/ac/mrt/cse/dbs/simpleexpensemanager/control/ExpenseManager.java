@@ -17,6 +17,8 @@
 package lk.ac.mrt.cse.dbs.simpleexpensemanager.control;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -62,10 +64,11 @@ public abstract class ExpenseManager implements Serializable {
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day);
         Date transactionDate = calendar.getTime();
-
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        String tDate = df.format(transactionDate);
         if (!amount.isEmpty()) {
             double amountVal = Double.parseDouble(amount);
-            transactionsHolder.logTransaction(transactionDate, accountNo, expenseType, amountVal);
+            transactionsHolder.logTransaction(tDate, accountNo, expenseType, amountVal);
             accountsHolder.updateBalance(accountNo, expenseType, amountVal);
         }
     }
